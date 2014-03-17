@@ -1,5 +1,5 @@
-var trakt = require('./trakttv')
-var tpb = require('../scrapers/tpb')
+var trakt = require('./js/frontend/providers/trakttv')
+var tpb = require('./js/frontend/scrapers/tpb')
 
 function getSlugsFromPopularTelevision(data) {
   var deduplicate = {};
@@ -46,16 +46,10 @@ function getPopularTelevisionDetails(cb) {
   });
 }
 
+module.exports.getPopularTelevisionDetails = getPopularTelevisionDetails;
+
+/*
 getPopularTelevisionDetails(function(data) {
   console.log(JSON.stringify(data, undefined, 2));
 });
-
-/*tpb.getPopularTelevision(function(data) {
-  var slugs = getSlugsFromPopularTelevision(data);
-  console.log("### SLUG OUTPUT");
-  console.log(slugs);
-  var sc = new trakt.ShowCollection(slugs).getSummaries(function(data) {
-    console.log("### TRAKT OUTPUT");
-    console.log(data);
-  });
-})*/;
+*/

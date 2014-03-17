@@ -142,4 +142,8 @@ function getPopularTelevision(cb) {
 
 module.exports.getPopularTelevision = getPopularTelevision;
 
-// getPopularTelevision(function(data) { console.log(data); });
+/*
+getPopularTelevision(function(data) {
+  console.log(data); 
+});
+*/
