@@ -1,5 +1,5 @@
 App.View.Page = Backbone.View.extend({
-    className: 'page',
+    className: 'page2',
 
     initialize: function() {
         this.render();
@@ -8,14 +8,14 @@ App.View.Page = Backbone.View.extend({
     render: function() {
         $('.' + this.className).remove();
         this.$el.appendTo('section.container');
-        $('<ul class="movie-list"></ul>').appendTo(this.$el);
+        $('<ul class="tv-list"></ul>').appendTo(this.$el);
     },
 
     show: function() {
         // Fuck you UI.
         var $el = this.$el.hide(),
             $pages = $el.find('.page').addClass('notransition'),
-            $movies = $el.find('.movie').removeClass('loaded');
+            $tv = $el.find('.tv').removeClass('loaded');
 
         // ontransitionend could be buggy here.
         setTimeout(function() {
@@ -27,7 +27,7 @@ App.View.Page = Backbone.View.extend({
         // having a onDOMRendered could solve this shit.
         if ($el.is(App.Page.Home.$el)) {
             setTimeout(function() {
-                $el.find('.movie').addClass('loaded');
+                $el.find('.tv').addClass('loaded');
             }, 400);
         }
     }
