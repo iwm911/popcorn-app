@@ -10,8 +10,9 @@ body {
   background: $body-bg;
   border-radius: 5px;
   cursor: default;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   color: $text-color;
 }
 
@@ -58,7 +59,7 @@ a { text-decoration: none; }
   border-radius: 5px;
   color: #FFF;
   display: block;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;;
   font-size: 14px;
   font-weight: 700;
   margin-top: 10px;
@@ -69,9 +70,102 @@ a { text-decoration: none; }
   text-transform: uppercase;
   width: 155px;
 }
-
+.main-header {
+  font-weight: 200;
+  text-transform: uppercase;
+}
 /*
 -- App */
+
+// Toggle Select for TV Shows & Movies
+.toggle-area {
+ text-align: center;
+ padding-bottom: 1em;
+ width:100%;
+ position:absolute;
+ left:50%;
+ margin-left:-45px;
+}
+.switch {
+  background: #fff;
+  border-radius: 16px;
+  display: block;
+  height: 32px;
+  top:30px;
+  position: relative;
+  width: 90px;
+}
+
+.switch label {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+  text-transform: uppercase;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+  width: 170px;
+  margin-top:-40px;
+}
+
+.switch label:nth-of-type(1) {
+  right: -60%;
+  position: absolute;
+  text-align: left;
+}
+
+.switch label:nth-of-type(2) {
+  position: absolute;
+  left: -60%;
+  text-align: right;
+}
+
+.switch input {
+  height: 32px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 160px;
+  z-index: 2;
+}
+
+.switch input:checked~label:nth-of-type(1) { color: #fff; }
+.switch input:checked~label:nth-of-type(2) { color: #4a4a4a; }
+
+.switch input~:checked~label:nth-of-type(1) { color: #4a4a4a; }
+.switch input~:checked~label:nth-of-type(2) { color: #fff; }
+
+.switch input:checked~.toggle {
+  left: 2px;
+}
+
+.switch input~:checked~.toggle {
+  left: 60px;
+}
+
+.switch input:checked {
+  z-index: 0;
+}
+
+.toggle {
+  background: #4a4a4a;
+  border-radius: 50%;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  -webkit-transition: left .2s ease;
+  -moz-transition: left .2s ease;
+  -ms-transition: left .2s ease;
+  -o-transition: left .2s ease;
+  transition: left .2s ease;
+  width: 28px;
+  z-index: 1;
+}
 
 // Header bar
 #header {
@@ -184,6 +278,23 @@ a { text-decoration: none; }
           content: "\e00B";
       }
       &.fullscreen:hover{color:#b2b2b2;}
+
+      &.settings {
+        background: transparent;
+        background-image: url(../images/settings.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 0;
+        margin-top: 3px;
+        width: 32px;
+        height: 29px;
+        border-radius: 0;
+        display:block;
+
+        &:hover {
+          background-image: url(../images/settings_over.png);
+        }
+      }
     }
   }
 }
@@ -226,15 +337,17 @@ a { text-decoration: none; }
   height: calc(100% - #{$header_height});
   background: #121212;
   border-right: 1px solid #000;
-  font-family: 'Myriad Pro', 'Lucida Grande', sans-serif;
+  font-family: 'Open Sans', sans-serif;;
 
   h4 {
     margin-top: 40px;
     color: #404040;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
-
+  .movies-header {
+    margin-top: 9em;
+  }
   ul {
     li {
       display: block;
@@ -268,7 +381,7 @@ a { text-decoration: none; }
   .search {
     position: absolute;
     right: 20px;
-    top: 12px;
+    top: 110px;
 
     input {
       border: 2px solid rgba(255, 255, 255, 0.4);
@@ -284,7 +397,7 @@ a { text-decoration: none; }
 
     i {
       position: absolute;
-      top: 10px;
+      top: 8px;
       right: 10px;
       color: rgba(255, 255, 255, 0.4);
     }
@@ -402,7 +515,7 @@ body.has-notification {
     position: absolute;
     z-index: 9999;
     top: 15px;
-    left: 15px;
+    right: 15px;
     -webkit-app-region: no-drag;
   }
 

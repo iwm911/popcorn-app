@@ -1,5 +1,5 @@
-// Movie list
-.movie-list {
+// TV list
+.tv-list {
   margin-bottom: 15px;
 
   li {
@@ -112,8 +112,8 @@
 }
 
 
-// Animate the movies as they load
-.movie {
+// Animate the TV Shows as they load
+.tv {
   @include scale(0);
   @include transition(opacity .3s ease, transform .3s ease);
   opacity: 0;
