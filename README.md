@@ -2,7 +2,7 @@
 
 ## Idea
 
-To allow any computer user to watch movies easily streaming from torrents, without any particular knowledge.
+To allow any computer user to watch tv shows & movies easily streaming from torrents, without any particular knowledge.
 
 ![Demo Screenshot](http://static.cdnjd.com/imgs/how-ui.png)
 
