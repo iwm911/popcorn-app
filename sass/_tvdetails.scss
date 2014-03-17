@@ -17,7 +17,7 @@ sidebar, #settings {
     -webkit-transform: translate(100%, 0);
   }
 
-  // To close sidebar - .movie-detail
+  // To close sidebar - .tv-detail
   .closer {
     position: absolute;
     top: 0;
@@ -136,7 +136,7 @@ sidebar {
     &:hover { background: #eb282e; }
   }
 
-    .movie-detail {
+    .tv-detail {
       height: 100%;
       display: table;
 
@@ -156,7 +156,7 @@ sidebar {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
 
-        &:hover .movie-config { bottom: 2px; }
+        &:hover .tv-config { bottom: 2px; }
         .poster-inner { position: relative; }
 
         img.big-poster {
@@ -167,7 +167,7 @@ sidebar {
           vertical-align: bottom;
         }
 
-        .movie-config {
+        .tv-config {
           h4 {
             font-weight: bold;
             font-size: 14px;
@@ -296,7 +296,7 @@ sidebar {
         }
       }
 
-      // Display detail of movie
+      // Display detail of tv
       .side-content {
         z-index: 500;
         width: 60%;
@@ -319,7 +319,7 @@ sidebar {
             padding-right: 30px;
           }
 
-          .movie-quick-info {
+          .tv-quick-info {
             margin-bottom: 5px;
 
             li {
@@ -457,7 +457,7 @@ sidebar {
 
 // Applied to the body when the sidebar is open
 .sidebar-open {
-  li.movie {
+  li.tv{
     opacity: 0.25;
 
     &.active {
