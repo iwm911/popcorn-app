@@ -2,7 +2,7 @@
 
 ## Idea
 
-To allow any computer user to watch tv shows & movies easily streaming from torrents, without any particular knowledge.
+To allow the average person to easily stream TV Shows & Movies from torrents.
 
 ![Demo Screenshot](https://f.cloud.github.com/assets/6955882/2430994/577dcd44-ad13-11e3-8d48-727285b187bc.png)
 
