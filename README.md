@@ -8,7 +8,7 @@ To allow the average person to easily stream TV Shows & Movies from torrents.
 
 ### Status
 
-Under development (RC1) for Mac OSX - Windows - Linux.
+This is a fork of the major project (RC1) for Mac OSX - Windows - Linux.
 
 ### APIs
 
