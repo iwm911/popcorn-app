@@ -30,7 +30,7 @@
 
     <div id="catalog-select">
       <div class="toggle-area">
-        <div class="switch white">
+        <div class="switch white2">
           <input type="radio" name="switch" id="switchoff">
           <input type="radio" name="switch" id="switchon" checked>
           <label for="switchoff">TV</label>
@@ -73,8 +73,8 @@
                     <div class="quality switch white">
                       <input type="radio" name="switch" id="switch-off"<% if (this.model.get('quality') === '720p') { %> checked<% } %>>
                       <input type="radio" name="switch" id="switch-on"<% if (this.model.get('quality') === '1080p') { %> checked<% } %>>
-                      <label for="switch-off">720p</label>
-                      <label for="switch-on">1080p</label>
+                      <label class="seventwenty" for="switch-off">720p</label>
+                      <label class="seventwenty" for="switch-on">1080p</label>
                       <span class="toggle"></span>
                     </div>
                   <% } else { %>
