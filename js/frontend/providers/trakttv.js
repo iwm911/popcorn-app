@@ -3,6 +3,7 @@ var request = require('request')
 
 var API_ENDPOINT = URI('http://api.trakt.tv/'),
 	MOVIE_PATH = 'movie',
+  SHOW_PATH = 'show',
 	API_KEY = '7ea3b12cee84204217c3c06ad264d6bc';
 
 function MovieCollection(imdbIDs) {
@@ -26,6 +27,28 @@ MovieCollection.prototype.getSummaries = function(callback) {
 }
 
 exports.MovieCollection = MovieCollection;
+
+function ShowCollection(slugs) {
+  this.ids = slugs;
+  return this;
+}
+
+ShowCollection.prototype.getSummaries = function(callback) {
+  var uri = API_ENDPOINT.clone()
+        .segment([
+          SHOW_PATH,
+          'summaries.json',
+          API_KEY,
+          this.ids.join(','),
+          'normal'
+        ]);
+
+  request(uri.toString(), {json: true}, function(err, res, body) {
+    callback(body);
+  });
+}
+
+exports.ShowCollection = ShowCollection;
 
 exports.resizeImage = function(imageUrl, width) {
 	var uri = URI(imageUrl),

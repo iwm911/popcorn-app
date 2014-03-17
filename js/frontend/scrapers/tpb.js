@@ -96,7 +96,7 @@ function mergeMetadata(list1, list2) {
   var deduplicate = {}
   var midstate = []
   for (var i = 0; i < list1.length; i++) {
-    var dedup_name = list1[i].name + 'S' + list1[i].season.toString() + "E" + list1[i].episode.toString();
+    var dedup_name = list1[i].slug + 'S' + list1[i].season.toString() + "E" + list1[i].episode.toString();
     if (deduplicate[dedup_name]) {
       continue
     } else {
@@ -105,7 +105,7 @@ function mergeMetadata(list1, list2) {
     }
   }
   for (var i = 0; i < list2.length; i++) {
-    var dedup_name = list2[i].name + 'S' + list2[i].season.toString() + "E" + list2[i].episode.toString();
+    var dedup_name = list2[i].slug + 'S' + list2[i].season.toString() + "E" + list2[i].episode.toString();
     if (deduplicate[dedup_name]) {
       continue
     } else {
@@ -143,4 +143,3 @@ function getPopularTelevision(cb) {
 module.exports.getPopularTelevision = getPopularTelevision;
 
 // getPopularTelevision(function(data) { console.log(data); });
-getPopularTelevision(function(data) { console.log(data); });
