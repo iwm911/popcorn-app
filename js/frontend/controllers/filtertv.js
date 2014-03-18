@@ -1,8 +1,8 @@
-App.Controller.FilterGenreTv = function(genre, page) {
+App.Controller.FiltertvGenre = function(genre, page) {
     // Check if page exists
-    if (!App.Page.FilterGenre) {
+    if (!App.Page.FiltertvGenre) {
         // Create page
-        App.Page.FilterGenre = new App.View.Page({
+        App.Page.FiltertvGenre = new App.View.Page({
             id: 'tv-list'
         });
     }
@@ -25,7 +25,7 @@ App.Controller.FilterGenreTv = function(genre, page) {
     // Clean up if first page
     if (!page || page == '1') {
         $('.tv-list').first().empty();
-        App.Page.FilterGenre.show();
+        App.Page.FiltertvGenre.show();
     }
 
     setTimeout(function() {

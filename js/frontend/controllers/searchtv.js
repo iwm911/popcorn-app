@@ -1,8 +1,8 @@
-App.Controller.SearchTv = function(searchTerm, page) {
+App.Controller.Searchtv = function(searchtvTerm, page) {
     // Check if page exists
-    if (!App.Page.Search) {
+    if (!App.Page.Searchtv) {
         // Create page
-        App.Page.Search = new App.View.Page({
+        App.Page.Searchtv = new App.View.Page({
             id: 'tv-list'
         });
     }
@@ -10,7 +10,7 @@ App.Controller.SearchTv = function(searchTerm, page) {
     var Scrapper = App.currentScrapper;
 
     var tvCollection = new Scrapper([], {
-        keywords: searchTerm,
+        keywords: searchtvTerm,
         genre: null,
         page: page
     });
@@ -24,11 +24,11 @@ App.Controller.SearchTv = function(searchTerm, page) {
 
     // Clean up if first page
     if (!page || page == '1') {
-        console.log('Searching for ' + searchTerm);
+        console.log('Searching for ' + searchtvTerm);
         $('.tv-list').first().empty();
-        App.loader(true, i18n.__('searchLoading'));
+        App.loader(true, i18n.__('searchtvLoading'));
         window.initialLoading = true;
-        App.Page.Search.show();
+        App.Page.Searchtv.show();
     }
 
     setTimeout(function() {
