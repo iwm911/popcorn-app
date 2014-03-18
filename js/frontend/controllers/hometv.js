@@ -1,8 +1,8 @@
 App.Controller.HomeTv = function(page) {
     // Check if page exists
-    if (!App.Page.Home) {
+    if (!App.Page.HomeTv) {
         // Create page
-        App.Page.Home = new App.View.Page({
+        App.Page.HomeTv = new App.View.Page({
             id: 'tv-list'
         });
     }
@@ -29,7 +29,7 @@ App.Controller.HomeTv = function(page) {
             el: 'sidebar'
         });
 
-        App.Page.Home.show();
+        App.Page.HomeTv.show();
     }
 
     setTimeout(function() {
