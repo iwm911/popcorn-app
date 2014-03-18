@@ -59,14 +59,13 @@ App.View.TvList = Backbone.View.extend({
 
                 $tv.addClass('fullyLoaded');
 
-                var $newCover = $('<img src="' + this.get('image') + '" class="real hidden" alt="' + this.get('title') + '" />');
+                var $newCover = $('<img src="' + this.get('trakt_item.images.poster') + '" class="real hidden" alt="' + this.get('title') + '" />');
                 $currentEl.find('.cover').append($newCover);
 
                 $newCover.load(function() {
                     $(this).removeClass('hidden');
                 });
             }
-
 
         });
 
