@@ -17,8 +17,8 @@ App.View.TvListItem = Marionette.ItemView.extend({
     template: _.template('<a href="javascript:;">' +
         '<i class="fa fa-eye fa-3"></i>' +
         '<span class="cover"></span>' +
-        '<strong><%- title %></strong>' +
-        '<small><%- year %></small>' +
+        '<strong><%- title_item.title %></strong>' +
+        '<small><%- trakt_item.year %></small>' +
         '</a>'),
 
     // TV Show Title from Model
