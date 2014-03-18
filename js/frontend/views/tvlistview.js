@@ -11,13 +11,14 @@ App.View.TvList = Backbone.View.extend({
         this.options = options;
     },
 
+    //initializing options function
     initialize: function(options) {
         // Bind element on existing list
         this.$el = $('.tv-list').first();
-
+        //listener for model to be loaded
         this.listenTo(this.model, 'loaded', this.render);
     },
-
+    //return class of no-results if no option appears.
     empty: function() {
         this.$el.append('<div class="no-results">' + i18n.__('noResults') + '</div>');
         return false;

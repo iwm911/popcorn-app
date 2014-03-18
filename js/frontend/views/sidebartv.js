@@ -11,7 +11,7 @@ App.View.Sidebar = Backbone.View.extend({
         'click #switch-on': 'enableHD',
         'click #switch-off': 'disableHD'
     },
-
+    // Hide Sidebar Event
     keyHide: function(e) {
         if (e.which === 27 && $('body').is('.sidebar-open')) {
             /*alert("escape pressed from sidebar");*/
@@ -20,11 +20,11 @@ App.View.Sidebar = Backbone.View.extend({
             $('sidebar').addClass('hidden');
         }
     },
-
+    // Dropdown
     toggleDropdown: function(evt) {
         $(evt.currentTarget).parent().toggleClass('active');
     },
-
+    // Subtitle Event
     selectSubtitle: function(evt) {
         var $button = $(evt.currentTarget),
             lang = $button.val();
@@ -34,7 +34,7 @@ App.View.Sidebar = Backbone.View.extend({
             .find('.lang-placeholder').attr('src', $button.find('img').attr('src'));
         this.model.set('selectedSubtitle', lang);
     },
-
+    // Play Event
     play: function(evt) {
         evt.preventDefault();
         if (videoStreamer !== null) {
@@ -55,6 +55,7 @@ App.View.Sidebar = Backbone.View.extend({
         var previousStatus = '';
         var tvModel = this.model;
 
+        // Play Events
         playTorrent(file, subs, tvModel,
             function() {},
             function(percent) {

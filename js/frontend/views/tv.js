@@ -21,6 +21,7 @@ App.View.TvListItem = Marionette.ItemView.extend({
         '<small><%- year %></small>' +
         '</a>'),
 
+    // TV Show Title from Model
     serializeData: function() {
         return _.extend({}, this.model.attributes, {
             title: this.model.getShortTitle()
@@ -30,6 +31,8 @@ App.View.TvListItem = Marionette.ItemView.extend({
     select: function(evt) {
         evt.stopPropagation();
         evt.preventDefault();
+
+        // Event triggered if tv show is loaded.
 
         if (this.$el.hasClass('active')) {
             this.$el.removeClass('active');
